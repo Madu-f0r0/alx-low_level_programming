@@ -4,10 +4,11 @@
 /* more headers goes there */
 
 /**
- * Main - entry point of the program
+ * main - entry point of the program
  *
  * Return: Always 0 (Success)
  */
+
 int main(void)
 {
 	int n;
