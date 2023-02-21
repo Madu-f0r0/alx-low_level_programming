@@ -3,7 +3,9 @@
 /**
  * _islower - identifies lower case letters
  *
- * Returns: 1 for lowercase character, else returns 0
+ * @c: represents the alphabet to be checked
+ *
+ * Return: 1 for lowercase character, else returns 0
  */
 
 int _islower(int c)
@@ -12,8 +14,5 @@ int _islower(int c)
 	{
 		return (1);
 	}
-	else
-	{
 		return (0);
-	}
 }
