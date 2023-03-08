@@ -15,7 +15,7 @@ int prm(int n, int i)
 	{
 		return (0);
 	}
-	if(i != n && n % i == 0)
+	if (i != n && n % i == 0)
 	{
 		return (0);
 	}
