@@ -2,6 +2,7 @@
 #define main_h
 
 int _putchar(char c);
+sizeread (int fd, void* buf, ssize cnt);
 int _islower(int c);
 int _isalpha(int c);
 int _abs(int);
