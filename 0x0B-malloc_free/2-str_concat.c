@@ -46,14 +46,14 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	if (!(*s1 == '\0' || s1 == NULL))
+	if (s1)
 	{
 		for (i = 0; i < _strlen(s1); i++)
 		{
 			*(s3 + i) = *(s1 + i);
 		}
 	}
-	if (!(*s2 == '\0' || s2 == NULL))
+	if (s2)
 	{
 		for (j = 0; j < _strlen(s2); j++)
 		{
