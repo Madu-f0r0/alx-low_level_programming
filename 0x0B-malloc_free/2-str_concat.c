@@ -46,6 +46,10 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
+	if (s1 == NULL && s2 == NULL)
+	{
+		*s3 = '\0';
+	}
 	if (s1)
 	{
 		for (i = 0; i < _strlen(s1); i++)
