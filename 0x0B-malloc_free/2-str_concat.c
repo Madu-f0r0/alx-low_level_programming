@@ -15,7 +15,7 @@ int _strlen(char *s)
 
 	if (s == NULL)
 	{
-		return (0);
+		return (NULL);
 	}
 	while (*s != '\0')
 	{
@@ -56,10 +56,6 @@ char *str_concat(char *s1, char *s2)
 		{
 			*(s3 + i) = *(s1 + i);
 		}
-	}
-	else
-	{
-		s3 = s2;
 	}
 	if (s2)
 	{
