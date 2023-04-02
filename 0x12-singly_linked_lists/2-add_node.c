@@ -18,7 +18,6 @@ list_t *add_node(list_t **head, const char *str)
                 s_len++;
         in_front->len = s_len;
 	in_front->next = *head;
-
 	*head = in_front;
 	if (*head == NULL)
                 return (NULL);
