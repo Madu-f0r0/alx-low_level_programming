@@ -20,5 +20,8 @@ list_t *add_node(list_t **head, const char *str)
 	while (str[s_len] != '\0')
 		s_len++;
 	in_front->len = s_len;
-	return (*head);
+	if (*head == NULL)
+                return (NULL);
+	else
+		return (*head);
 }
