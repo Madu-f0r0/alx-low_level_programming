@@ -26,5 +26,8 @@ list_t *add_node(list_t **head, const char *str)
 		in_front->next = *head;
 		*head = in_front;
 	}
-	return (in_front);
+	if (in_front->next == NULL)
+		return (NULL);
+	else
+		return (in_front->next);
 }
