@@ -5,7 +5,6 @@
  * free_list - frees a list
  * @head: frees a list
  */
-
 void free_list(list_t *head)
 {
 	list_t *temp;
@@ -14,7 +13,7 @@ void free_list(list_t *head)
 	while (temp != NULL)
 	{
 		temp = temp->next;
-		free(*head);
+		free(head);
 		head = temp;
 	}
 }
