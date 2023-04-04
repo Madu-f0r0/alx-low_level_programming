@@ -10,14 +10,14 @@
 
 size_t print_listint(const listint_t *h)
 {
-	listint_t *temp;
+	const listint_t *temp;
 	size_t node_count = 0;
 
-	if (head == NULL)
+	if (h == NULL)
 	{
-		return (NULL);
+		return (0);
 	}
-	temp = h
+	temp = h;
 	while (temp != NULL)
 	{
 		printf("%d\n", temp->n);
