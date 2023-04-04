@@ -4,7 +4,7 @@
 /**
  * listint_len - counts the number of elements in a linked listint_t list
  * @h: a pointer to a listint_t
- * Returns: the number of elements
+ * Return: the number of elements
  */
 
 size_t listint_len(const listint_t *h)
