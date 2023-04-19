@@ -1,1 +1,0 @@
-Project 0x08. C takes a deep dive into the world of recursion. In this project, I am restricted from following the iterative approach to solving computing problems, and am tasked with approaching such problems recursively. 
