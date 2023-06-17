@@ -96,6 +96,10 @@ char **strtow(char *str)
 		return (NULL);
 	}
 	words = word_count(str);
+	if (words == 0)
+	{
+		return (NULL);
+	}
 	arr = mem_alloc(str, words);
 
 	for (strIndex = 0, wordNo = 0, wordIndex = 0; strIndex <
