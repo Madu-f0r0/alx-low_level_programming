@@ -1,0 +1,1 @@
+0x0F. C - Function pointers is an introduction to pointers to functions. In this project, we practice the declaration and use of function pointers, passing function pointers as arguments, as well as the use of an array of function pointers.
