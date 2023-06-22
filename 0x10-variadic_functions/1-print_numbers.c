@@ -34,7 +34,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		printf("%d", va_arg(numbers, int));
 		for (i = 1; i < n; i++)
 		{
-			printf("%s %d", separator, va_arg(numbers, int));
+			printf("%s%d", separator, va_arg(numbers, int));
 		}
 		printf("\n");
 	}
