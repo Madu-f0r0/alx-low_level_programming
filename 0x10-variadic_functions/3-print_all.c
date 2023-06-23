@@ -47,8 +47,8 @@ void check_buffer(char *buffer)
 		case 1:
 			printf("(nil)");
 			break;
-		default:
-			printf("%s\n", buffer);
+		case 0:
+			printf("%s", buffer);
 	}
 }
 
