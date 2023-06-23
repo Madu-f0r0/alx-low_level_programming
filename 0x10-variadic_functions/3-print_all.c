@@ -36,9 +36,27 @@ unsigned int arg_counter(const char * const format)
 }
 
 /**
+ * check_buffer - checks if buffer passed is NULL and prints accordingly
+ * @buffer: buffer to be checked
+ */
+
+void check_buffer(char *buffer)
+{
+	switch (buffer == NULL)
+	{
+		case 1:
+			printf("(nil)");
+			break;
+		case 0:
+			printf("%s\n", buffer);
+	}
+}
+
+/**
  * print_all - prints all the optional arguments passed
  * @format: the format string
  */
+
 void print_all(const char * const format, ...)
 {
 	unsigned int i = 0, j = 0, validFormatSwitch;
@@ -46,6 +64,7 @@ void print_all(const char * const format, ...)
 	va_list list;
 
 	va_start(list, format);
+
 	while (format != NULL && i < strlen(format))
 	{
 		validFormatSwitch = 0;
@@ -65,12 +84,7 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				buffer = va_arg(list, char *);
-				if (buffer == NULL)
-				{
-					printf("(nil)");
-					break;
-				}
-				printf("%s", buffer);
+				check_buffer(buffer);
 				validFormatSwitch = 1;
 		}
 		if (validFormatSwitch == 1 && j < (arg_counter(format)) - 1)
