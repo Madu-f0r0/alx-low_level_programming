@@ -49,6 +49,7 @@ void check_buffer(char *buffer)
 			break;
 		case 0:
 			printf("%s\n", buffer);
+			break;
 	}
 }
 
