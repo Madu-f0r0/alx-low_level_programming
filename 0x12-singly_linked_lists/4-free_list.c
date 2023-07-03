@@ -1,6 +1,11 @@
 #include "lists.h"
 #include <stdlib.h>
 
+/**
+ * free-list - frees all the memory alocated for a list_t list
+ * @head: a pointer to the first node of the list
+ */
+
 void free_list(list_t *head)
 {
 	list_t *nodePtr;
@@ -18,4 +23,4 @@ void free_list(list_t *head)
 		free(head);
 		head = nodePtr;
 	}
-}	
+}
