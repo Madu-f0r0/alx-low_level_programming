@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * free-list - frees all the memory alocated for a list_t list
+ * free_list - frees all the memory alocated for a list_t list
  * @head: a pointer to the first node of the list
  */
 
