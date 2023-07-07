@@ -6,26 +6,9 @@
  */
 void print_binary(unsigned long int n)
 {
-	int c, i = 0;
-	char arr[64];
-
-	if (n == 0)
+	if (n > 1)
 	{
-		_putchar('0');
-		return;
+		print_binary(n >> 1);
 	}
-	while (n)
-	{
-		c = n & 1;
-		arr[i] = 48 + c;
-		n = n >> 1;
-		i++;
-	}
-	arr[i] = '\0';
-
-	while (i >= 0)
-	{
-		_putchar(arr[i]);
-		i--;
-	}
+	_putchar(48 + (n & 1));
 }
