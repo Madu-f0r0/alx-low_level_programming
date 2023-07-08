@@ -12,6 +12,11 @@ int get_bit(unsigned long int n, unsigned int index)
 	char arr[64];
 	int i = 0;
 
+	for (; i < 63; i++)
+	{
+		arr[i] = 0;
+	}
+	i = 0;
 	if (n < 2)
 	{
 		arr[i++] = n;
@@ -28,16 +33,15 @@ int get_bit(unsigned long int n, unsigned int index)
 		arr[i] = '\0';
 	}
 
-	if ((int)index > (i - 1))
+	if ((int)index > 63)
 	{
 		return (-1);
 	}
 
 	i = 0;
-	while (i <= (int)index)
+	while (i < (int)index)
 	{
 		i++;
 	}
-	i--;
 	return (arr[i]);
 }
