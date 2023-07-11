@@ -12,7 +12,7 @@ void copy_text(char *file_from, char *file_to)
 	ssize_t rRet, wRet, fCl, tCl;
 
 	fdf = open(file_from, O_RDONLY);
-	fdt = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
+	fdt = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
 		rRet = read(fdf, buff, 1024);
