@@ -1,45 +1,68 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
- * insert_dnodeint_at_index - inserts a node at a given position
- * @h: a double piointer to the first node in the list
- * @idx: the index to insert the node
- * @n: the data element of the new node
+ * insert_dnodeint_at_index - inserts a new node at a given position
+ * @h: a pointer to the head node in the list
+ * @idx: the index where the node is to be added
+ * @n: the data element of the list
  *
- * Return: the address of the new_node created
+ * Return: the address of the new node
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *node_ptr, *prev_node, *new_node = NULL;
-	unsigned int i;
+	dlistint_t *node_ptr, *new_node = NULL;
 
 	if (h)
 	{
+		new_node = malloc(sizeof(dlistint_t));
+		if (new_node == NULL)
+		{
+			return (NULL);
+		}
+
+		new_node->n = n;
+
 		node_ptr = *h;
-		for (i = 0; i <= idx; i++)
+		while (node_ptr || idx)
 		{
 			if (idx == 0)
 			{
-				new_node = add_dnodeint(*h, n);
-				break;
-			}
-			else
-			{
-				if (i + 1 == idx && node_ptr->next == NULL)
+				if (*h == NULL)
 				{
-					new_node = add_dnodeint_end(&node_ptr, n);
-					break;
+					*h = new_node;
+					new_node->next = NULL;
+					new_node->prev = NULL;
 				}
-				else if (i == idx)
+				else
 				{
-					prev_node = node_ptr->prev;
-					new_node = add_dnodeint(&node_ptr, n);
-					new_node->prev = prev_node;
-					prev_node->next = new_node;
-					break;
+					new_node->next = node_ptr;
+					new_node->prev = node_ptr->prev;
+					if (node_ptr == *h)
+						*h = new_node;
+					else
+						node_ptr->prev->next = new_node;
+					node_ptr->prev = new_node;
+				}
+				return (new_node);
+			}
+
+			if (node_ptr->next == NULL)
+			{
+				if (idx - 1)
+				{
+					return (NULL);
+				}
+				else
+				{
+					new_node->next = NULL;
+					new_node->prev = node_ptr;
+					node_ptr->next = new_node;
+					return (new_node);
 				}
 			}
 			node_ptr = node_ptr->next;
+			idx--;
 		}
 	}
 	return (new_node);
