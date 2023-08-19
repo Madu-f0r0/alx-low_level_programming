@@ -7,21 +7,19 @@
  */
 int main(void)
 {
-	int i = 1, j = 2, temp;
+	unsigned long int temp, i = 1, j = 2;
+	int fib_no = 0;
 
-	printf("%d, %d", i, j);
+	printf("%lu, %lu", i, j);
 
-	while (1)
+	while (fib_no < 48)
 	{
 		temp = j;
 		j += i;
 		i = temp;
 
-		if (j > 50)
-		{
-			break;
-		}
-		printf(", %d", j);
+		printf(", %lu", j);
+		fib_no++;
 	}
 	putchar('\n');
 	return (0);
