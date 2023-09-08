@@ -21,16 +21,16 @@ void hash_table_print(const hash_table_t *ht)
 			/* Attempt to print if the index is not empty */
 			if ((ht->array)[i])
 			{
-				if (first_item == 0)
-				{
-					printf(", ");
-				}
-				printf("'%s':", (ht->array)[i]->key);
-
 				/* Print array index list */
 				temp = (ht->array)[i];
 				while (temp)
 				{
+					if (first_item == 0)
+                                	{
+                                        	printf(", ");
+                                	}
+
+					printf("'%s':", temp->key);
 					printf(" '%s'", temp->value);
 					temp = temp->next;
 				}

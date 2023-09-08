@@ -35,15 +35,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		/* Node insertion if the array index is empty */
 		if ((ht->array)[hash_index] == NULL)
 		{
-			ht->array[hash_index] = hash_item;
+			(ht->array)[hash_index] = hash_item;
 			hash_item->next = NULL;
 		}
 
 		/* Node insertion in case of a collision */
 		else
 		{
-			hash_item->next = ht->array[hash_index];
-			ht->array[hash_index] = hash_item;
+			hash_item->next = (ht->array)[hash_index];
+			(ht->array)[hash_index] = hash_item;
 		}
 
 		return (1);
