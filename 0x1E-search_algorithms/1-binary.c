@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include "search_algos.h"
 
+/**
+ * binary_search - searches for a value in a sorted array of integers
+ * using the search function below
+ *
+ * @array: the arreay to be searched through
+ * @size: the size of the array
+ * @value: the value searched for
+ *
+ * Return: the index of the value if found; -1 if not
+ */
 int binary_search(int *array, size_t size, int value)
 {
 	if (array && size)
@@ -10,6 +20,16 @@ int binary_search(int *array, size_t size, int value)
 	return (-1);
 }
 
+/**
+ * search - recursively searches for a value in an array using
+ * Binary search algorithm
+ *
+ * @array: the array to be searched through
+ * @min_index: the first index of the subarray
+ * @max_index: the last index of the subarray
+ * @value: the value being searched for
+ * Return: the index of the value if found; -1 if not
+ */
 int search(int *array, int min_index, int max_index, int value)
 {
 	int middle, i;
