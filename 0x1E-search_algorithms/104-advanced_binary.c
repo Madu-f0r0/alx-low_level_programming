@@ -49,7 +49,7 @@ int search(int *array, int min_index, int max_index, int value)
 	if (value == array[middle])
 	{
 		if (value == array[middle - 1])
-			return (middle - 1);
+			return (search(array, min_index, middle, value));
 		return (middle);
 	}
 
